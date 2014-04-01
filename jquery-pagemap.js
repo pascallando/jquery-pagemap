@@ -1,5 +1,5 @@
 /*!
- * jquery-pagemap v1.0
+ * jquery-pagemap v1.0.1
  */
 
 (function ($) {
@@ -112,7 +112,8 @@
     * @author Pascal Lando
     */
     $.fn.pagemap = function (options) {
-        var language = navigator.language || navigator.userLanguage,
+        var browser_language = window.navigator.userLanguage || window.navigator.language,
+            language = browser_language.indexOf('fr') > -1 ? 'fr' : 'en',
             btn_text_trans = {fr: 'Afficher le plan', en: 'Show TOC'},
             default_options = {
                 toc_container: '#toc',
